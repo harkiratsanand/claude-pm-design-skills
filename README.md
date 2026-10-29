@@ -7,10 +7,14 @@ Exported from personal Claude Code instance on 2026-10-28.
 1. Copy the files into the global Claude directory:
 
    ```bash
-   mkdir -p ~/.claude/skills ~/.claude/commands
+   mkdir -p ~/.claude/skills ~/.claude/commands ~/.claude/templates
    cp -R skills/* ~/.claude/skills/
    cp commands/* ~/.claude/commands/
+   cp templates/* ~/.claude/templates/
    ```
+
+   The `templates/` copy is required: `/prd` imports
+   `~/.claude/templates/prd-template.md` via an `@../templates/` reference.
 
 2. The four core skill files are NOT auto-loaded by their presence alone —
    they must be imported from `~/.claude/CLAUDE.md`. Add these lines
@@ -45,6 +49,9 @@ Exported from personal Claude Code instance on 2026-10-28.
   tokens, layering, typography)
 - plan-ceo-review/ — CEO/founder-mode plan review
 - plan-eng-review/ — eng-manager-mode plan review
+
+### templates/
+- prd-template.md — the 11-section PRD structure `/prd` drafts against
 
 ### commands/
 - prd.md, prd-lite.md — PRD writing partner (full and solo-project versions)
